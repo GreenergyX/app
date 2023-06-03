@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WASTE MANAGEMENT APP - Login/Sign Up</title>
+  <style>
+    /* CSS code */
+    body {
+      background-color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      text-align: center;
+    }
+
+    .icon {
+      width: 150px;
+      height: 150px;
+    }
+
+    .welcome {
+      font-weight: bold;
+      font-size: 36px;
+      color: lime;
+    }
+
+    .button {
+      font-size: 24px;
+      padding: 10px 20px;
+      background-color: lime;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="welcome fade-in">Welcome to the WASTE MANAGEMENT</h1>
+    <h1 class="welcome fade-in">app by GreenergyX</h1>
+    <img src="https://i.pinimg.com/564x/49/ca/51/49ca51c8f2d305f5a0a5c2d4c6c656ab.jpg" alt="Icon" class="icon fade-in">
+    <br><br>
+    <button onclick="window.location.href = 'main.html';" class="button fade-in"><span style="color: black;">Log In</span></button>
+    <button onclick="window.location.href = 'main.html';" class="button fade-in"><span style="color: black;">Sign Up</span></button>
+  </div>
+</body>
+</html>

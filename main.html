@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASTE MANAGEMENT</title>
+  <style>
+    body {
+      background-color: green;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .header {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header .logo {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 210px;
+      height: 80px;
+ }
+
+    .header .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+   
+    }
+
+    .header .logo img,
+    .header .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      background-color: #82c91e;
+      color: white;
+      border-radius: 20px 20px 0 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab:hover {
+      background-color: #7ac91e;
+    }
+
+    .tab.active {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .content {
+      display: none;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 0 20px 20px 20px;
+      margin-top: 2px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .entry {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .entry h2 {
+      font-size: 24px;
+    }
+
+    .entry img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+
+    .form-container {
+      margin-top: 20px;
+    }
+
+    .form-container label,
+    .form-container input,
+    .form-container button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: #82c91e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .successMessage {
+      color: green;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>WASTE MANAGEMENT</h1>
+    <div class="logo">
+      <img src="https://i.pinimg.com/236x/42/22/a6/4222a67e00bca8a4e35e4421e813c0d3.jpg" alt="Logo">
+    </div><br><br>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="openTab('materials')">Materials</div>
+    <div class="tab" onclick="openTab('entries')">Entries</div>
+    <div class="tab" onclick="openTab('about')">About</div>
+    <div class="tab" onclick="openTab('tips')">Tips & Tricks</div>
+  </div>
+
+  <div id="materials" class="content">
+    <h2>Materials Tab</h2>
+    <div class="form-container">
+      <label for="plastics">Plastics:</label>
+      <input type="number" id="plastics" min="0">
+      <label for="cardboard">Cardboard:</label>
+      <input type="number" id="cardboard" min="0">
+      <label for="cans">Cans:</label>
+      <input type="number" id="cans" min="0">
+      <label for="compost">Compost:</label>
+      <input type="number" id="compost" min="0">
+      <label for="other">Other:</label>
+      <input type="text" id="other">
+      <label for="recycledImage">Upload Image:</label>
+      <input type="file" id="recycledImage">
+      <button onclick="submitForm()">Submit</button>
+      <div class="successMessage" id="successMessage"></div>
+    </div>
+  </div>
+
+  <div id="entries" class="content">
+    <h2>Entries Tab</h2>
+    <div id="entriesList"></div>
+  </div>
+
+  <div id="about" class="content">
+    <h1>About Tab</h1>
+    <p>This Waste Management App is designed to help users keep track of their recycling efforts and promote a sustainable environment. It is developed by Shaurya and Vihaan, two passionate individuals dedicated to conserving the planet's resources.</p>
+    <p>With this app, users can record the materials they have recycled, such as plastics, cardboard, cans, compost, and more. They can also upload images to showcase their recycling achievements.</p>
+    <p>Our aim is not limited to just our school but extends to all schools and communities. We believe that by implementing this app, we can collectively make a positive impact on waste management.</p>
+<div class="icon">
+      <img src="https://i.pinimg.com/236x/49/ca/51/49ca51c8f2d305f5a0a5c2d4c6c656ab.jpg" alt="Icon">
+    </div>
+  </div>
+
+    <div id="tips" class="content">
+    <h1>Tips &amp; Tricks Tab</h1>
+    <p>Recycling is an important part of waste management, and it is essential to follow local recycling guidelines. Here are some tips and tricks:</p>
+    <ul>
+      <li>Reduce and reuse items whenever possible.</li>
+      <li>Practice proper sorting of recyclables.</li>
+      <li>Rinse containers before recycling.</li>
+      <li>Flatten boxes to save space.</li>
+      <li>Dispose of electronic waste properly.</li>
+      <li>Compost food scraps and yard waste.</li>
+      <li>Buy recycled products made from recycled materials.</li>
+      <li>Educate others about the importance of recycling.</li>
+    </ul>
+    <p>Remember, recycling is just one aspect of waste management. It is crucial to reduce consumption, practice reuse, and make mindful purchasing decisions to achieve a sustainable future.</p>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      // Hide all content divs and remove active class from tabs
+      var tabs = document.getElementsByClassName('tab');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+      var contents = document.getElementsByClassName('content');
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+      }
+
+      // Show the selected tab and add active class
+      document.getElementById(tabName).style.display = 'block';
+      document.querySelector('.tab[data-tab="' + tabName + '"]').classList.add('active');
+    }
+
+    function submitForm() {
+      var plastics = document.getElementById('plastics').value;
+      var cardboard = document.getElementById('cardboard').value;
+      var cans = document.getElementById('cans').value;
+      var compost = document.getElementById('compost').value;
+      var other = document.getElementById('other').value;
+      var recycledImage = document.getElementById('recycledImage').value;
+
+      if (plastics || cardboard || cans || compost || other) {
+        var entriesList = document.getElementById('entriesList');
+        var entry = document.createElement('div');
+        entry.classList.add('entry');
+        entry.innerHTML = '<h2>Entry ' + (entriesList.childElementCount + 1) + '</h2>' +
+          '<p>Plastics: ' + plastics + '</p>' +
+          '<p>Cardboard: ' + cardboard + '</p>' +
+          '<p>Cans: ' + cans + '</p>' +
+          '<p>Compost: ' + compost + '</p>' +
+          '<p>Other: ' + other + '</p>';
+
+        if (recycledImage) {
+          entry.innerHTML += '<img src="' + recycledImage + '">';
+        }
+
+        entriesList.appendChild(entry);
+        document.getElementById('successMessage').textContent = 'Saved!';
+        setTimeout(function() {
+          document.getElementById('successMessage').textContent = '';
+        }, 3000);
+      } else {
+        alert('Please enter at least one value before submitting.');
+      }
+    }
+  </script>
+</body>
+
+</html>
